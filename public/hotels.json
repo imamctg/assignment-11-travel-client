@@ -1,0 +1,50 @@
+[
+    {
+        "id": 51,
+        "name": "Haven Glebe",
+        "address": "196 Glebe Point Road, Glebe, 2037 Sydney, Australia ",
+        "fullDesc": "The 4-star Haven Glebe is located in the cosmopolitan inner city suburb of Glebe, just 14 minutes from the ICC Sydney via the light rail. It offers stylish, modern rooms with a 40-inch LCD TV. Guests can relax in Australia.",
+        "price": 500,
+        "img": "https://i.ibb.co/7jDZfP6/hotel1.jpg"
+    },
+    {
+        "id": 52,
+        "name": "Sri Lanka",
+        "address": "No. 150/12, Samanthara Road, Molligoda, 12560 Wadduwa, Sri Lanka",
+        "fullDesc": "The perfect honeymoon of your dreams does exist when you book this customisable 3 nights 4 days Sri Lanka honeymoon package which includes some of the most sought after destinations in Sri Lanka. This 4-day honeymoon package from Delhi, Mumbai, Chennai, Bangalore and other major Indian cities takes you to Negombo, Kandy and Bentota- each known for most amazing tourist attractions in Sri Lanka.",
+        "price": 700,
+        "img": "https://i.ibb.co/cJJ954N/hotel2.jpg"
+    },
+    {
+        "id": 53,
+        "name": "Victoria Hotel (SG Clean)",
+        "address": "87 Victoria Street, Victoria, 188016 Singapore, Singapore",
+        "fullDesc": "Attractively located in the Victoria district of Singapore, Victoria Hotel (SG Clean) is situated 200 m from Singapore Art Museum, 400 m from Raffles City and 500 m from Bugis Street.",
+        "price": 950,
+        "img": "https://i.ibb.co/rMcjNxC/hotel3.jpg"
+    },
+    {
+        "id": 54,
+        "name": "Ghaya Grand Hotel",
+        "address": "International Media Production Zone, Dubai, United Arab Emirates ",
+        "fullDesc": "Ghaya Grand Hotel is located in Dubai Production City, near the Tecom Zone. Guests can enjoy free WiFi throughout the property. It offers a swimming pool and 5 restaurants.",
+        "price": 630,
+        "img": "https://i.ibb.co/R3xvkm6/hotel4.jpg"
+    },
+    {
+        "id": 55,
+        "name": "Villa Sally",
+        "address": "Exclusive Bali Honeymoon Packages For A Romantic Getaway",
+        "fullDesc": "Villa Sally is a luxury complex located in Canggu, 1.3 km from Berawa Beach. The villa has air conditioning and free WiFi. Free private parking is available on site.",
+        "price": 710,
+        "img": "https://i.ibb.co/nR3LtMz/hotel5.jpg"
+    },
+    {
+        "id": 56,
+        "name": "Disney Hotel Cheyenne",
+        "address": "Rue du Bœuf Agile, 77700 Coupvray, France",
+        "fullDesc": "Best hotel for stay. It guarantees a blissful and memorable honeymoon with lots of activities and super romantic moments. If you are looking for a 5n/6d Andaman package, look no further. Starting from Port Blair, this Andaman honeymoon package proceeds to Havelock and Neil.",
+        "price": 970,
+        "img": "https://i.ibb.co/7KbRzK9/hotel6.jpg"
+    }
+]

@@ -1,0 +1,35 @@
+.banner{
+  background-image: url(../../../images/banner.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 530px;
+   
+}
+
+.banner h1{
+    color: white;
+    font-size: 80px;
+    line-height: 80px;
+    padding: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'poppins',sans-serif;
+}
+
+.banner h5{
+    color: white;
+    line-height: 32px;
+    padding: 15px;
+    letter-spacing: 2px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+.banner button{
+    background-color:rgb(206, 51, 154);
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 20px;
+    color: white;
+}
