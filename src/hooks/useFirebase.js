@@ -1,137 +1,139 @@
-
-import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut, updateProfile, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { useEffect, useState } from "react";
 import initializeAuthentication from "../Firebase/firebase.init";
+import { useState, useEffect } from 'react';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken, signOut } from "firebase/auth";
 
 
-initializeAuthentication();
-const provider = new GoogleAuthProvider();
+// initialize firebase app
+initializeAuthentication()
 
 const useFirebase = () => {
-
-
+    const [user, setUser] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
+    const [authError, setAuthError] = useState('');
+    const [admin, setAdmin] = useState(false);
+    const [token, setToken] = useState('');
 
 
     const auth = getAuth();
-    const [user, setUser] = useState({});
-    const [error, setError] = useState("");
-    const [email, setEmail] = useState('');
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
+    const googleProvider = new GoogleAuthProvider();
 
 
-    const handleGoogleLogin = () => {
-        setIsLoading(true)
-
-        return signInWithPopup(auth, provider)
-            .finally(() => setIsLoading(false));
-
-    };
-
-    const handleEmailChange = (e) => {
-        console.log(e.target.value)
-        setEmail(e.target.value)
-    };
-
-    const handleNameChange = (e) => {
-        console.log(e.target.value)
-        setName(e.target.value)
-    };
-
-    const handlePasswordChange = (e) => {
-        console.log(e.target.value)
-        setPassword(e.target.value)
-    }
 
 
-    const handleLogout = () => {
+    const registerUser = (email, password, name, history) => {
+        console.log(email);
         setIsLoading(true);
-        signOut(auth)
-            .then(() => {
-                setUser({})
-            })
-            .finally(() => setIsLoading(false))
-
-    };
-
-    const handleUserRegister = (e) => {
-        console.log(email, password)
-        e.preventDefault();
-        setIsLoading()
-        if (password.length < 6) {
-            setError('Password must be Six character length')
-            return;
-        }
-
         createUserWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                console.log(result.user);
-                const user = result.user;
-                setUser(user)
-
-                setUserName()
-                setUser({})
-                setError('Registration Successfull ! Please Click Login Button');
-
+            .then((userCredential) => {
+                setAuthError('');
+                const newUser = { email, displayName: name };
+                console.log('dfa');
+                setUser(newUser);
+                // save user to the database
+                saveUser(email, name, 'POST');
+                // send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                }).catch((error) => {
+                });
+                history.replace('/');
             })
             .catch((error) => {
-                const errorMessage = error.message;
-                setError(errorMessage)
-            });
-
-    };
-
-    const setUserName = () => {
-        updateProfile(auth.currentUser, { displayName: name })
-            .then(result => { })
+                setAuthError(error.message);
+                console.log(error);
+            })
+            .finally(() => setIsLoading(false));
     }
 
-    const handleUserLogin = () => {
-
-        setIsLoading(false)
-        return signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                console.log(result.user)
-                setUser(result.user)
-                return true;
+    const loginUser = (email, password, location, history) => {
+        setIsLoading(true);
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
+                setAuthError('');
             })
-            .catch(error => {
-                console.log(error.message)
+            .catch((error) => {
+                setAuthError(error.message);
             })
-
             .finally(() => setIsLoading(false));
-    };
+    }
 
+    const signInWithGoogle = (location, history) => {
+        setIsLoading(true);
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                const user = result.user;
+                saveUser(user.email, user.displayName, 'PUT');
+                setAuthError('');
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
+            }).catch((error) => {
+                setAuthError(error.message);
+            }).finally(() => setIsLoading(false));
+    }
+
+    // observer user state
     useEffect(() => {
-
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribed = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
-            }
-            else {
-                setUser({});
+                getIdToken(user)
+                    .then(idToken => {
+                        setToken(idToken);
+                    })
+            } else {
+                setUser({})
             }
             setIsLoading(false);
         });
-    }, [auth]);
+        return () => unsubscribed;
+    }, [auth])
+
+    useEffect(() => {
+        fetch(`https://frozen-crag-22043.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
+
+    const logout = () => {
+        setIsLoading(true);
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        })
+            .finally(() => setIsLoading(false));
+    }
+
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('https://frozen-crag-22043.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
 
     return {
         user,
-        error,
-        handleGoogleLogin,
-        handleLogout,
-        handleUserRegister,
-        handleUserLogin,
-        handleNameChange,
-        handleEmailChange,
-        handlePasswordChange,
+        admin,
+        token,
         isLoading,
-        name
+        authError,
+        registerUser,
+        loginUser,
+        signInWithGoogle,
+        logout,
 
-
-    };
-
-};
+    }
+}
 
 export default useFirebase;
+
+
+

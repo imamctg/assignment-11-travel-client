@@ -1,74 +1,98 @@
 [
     {
         "id": 101,
-        "name": "Australia",
-        "description": "Australia 10 Days Honeymoon Package",
-        "fullDesc": "Australia  is one of the favourite places among couples to enjoy a romantic honeymoon. Be it the lush green garden, or the serene beaches, Australia is a paradise for honeymooners. And with the tourism at its best in Australia now, they can avail the Australia 10 days itinerary for honeymoon package.",
-        "price": 1200,
-        "img": "https://i.ibb.co/5nh4kP9/package1.jpg"
+        "name": "Aston Martin",
+        "description": "This list of car brands and their origins will give you more insight into the culture and history of these companies.",
+        "fullDesc": "The name Aston Martin is derived partly from the name of its founder, Lionel Martin, and partly for a stretch of road in Hertfordshire, England, used for racing, called the Aston Hillclimb.",
+        "price": 8,
+        "img": "https://i.ibb.co/G2Cd1gw/car-img12.png"
     },
     {
         "id": 102,
-        "name": "Sri Lanka",
-        "description": "Mesmerizing Sri Lanka Honeymoon Package",
-        "fullDesc": "The perfect honeymoon of your dreams does exist when you book this customisable 3 nights 4 days Sri Lanka honeymoon package which includes some of the most sought after destinations in Sri Lanka. This 4-day honeymoon package from Delhi, Mumbai, Chennai, Bangalore and other major Indian cities takes you to Negombo, Kandy and Bentota- each known for most amazing tourist attractions in Sri Lanka.",
-        "price": 1000,
-        "img": "https://i.ibb.co/DLNmbBt/dan-freeman-7-Zb7k-Uy-Qg1-E-unsplash.jpg"
+        "name": "BMW",
+        "description": "BMW started its operation in 1912 and was formed by the merger of three German companies.",
+        "fullDesc": "The acronym BMW stands for Bayerische Motoren Werke GmnH, which roughly translates to Bavarian Engine Works Company.",
+        "price": 7,
+        "img": "https://i.ibb.co/QpQygF3/car-img11.png"
     },
     {
         "id": 103,
-        "name": "Singapore Honeymoon",
-        "description": "Paradisiacal Luxury Honeymoon Package For Singapore",
-        "fullDesc": "Replete with picturesque beaches, colourful streets and flea markets, and a throbbing nightlife, the island of Singapore offers a bouquet of romance to newlyweds. Embark on a new journey with your beloved while opting for luxury honeymoon escapes to Singapore, and let the itchy feet find some relief. An amalgamation of fun, tranquility, and adventure, a sojourn at this enticing city-state island brings every fantasy to life. Boasting incredible views of skyscrapers, beautiful Buddhist temples, and natural attractions, this ‘Lion City’ has a treat for every tourist.",
-        "price": 1500,
-        "img": "https://i.ibb.co/Y3JXFXz/package3.jpg"
+        "name": "Ferrari",
+        "description": "Ferrari is derived from the word meaning blacksmith.",
+        "fullDesc": "The luxury car brand Ferrari is named after its Italian founder, Enzo Ferrari, who was an official Alto race driver. In 1939, he quit racing to build his own company.",
+        "price": 12,
+        "img": "https://i.ibb.co/89P6wDq/car-img10.png"
     },
     {
         "id": 104,
-        "name": "Dubai Tour",
-        "description": "This is Awesome package for Exploring The Splendor Of Dubai",
-        "fullDesc": "This is Awesome package for 5 days, 4 nights Dubai honeymoon package is the perfect match for couples who fancy a romantic getaway that’s a blend of serenity and adventure. As the duo will visit the top tourist attractions of Dubai, their bond will get stronger.",
-        "price": 1300,
-        "img": "https://i.ibb.co/QCjV94j/package4.jpg"
+        "name": "Ford",
+        "description": "Henry Ford founded the Ford Motors Company in 1903, in Detroit, Michigan.",
+        "fullDesc": "It is perfected the mass production of cars by introducing moving assembly lines. This gave him the edge to cut the cost and offer an affordable car to the American middle class.",
+        "price": 11,
+        "img": "https://i.ibb.co/3yF1Dsj/car-img9.png"
     },
     {
         "id": 105,
-        "name": "Bali Exclusive",
-        "description": "Exclusive Bali Honeymoon Packages For A Romantic Getaway",
-        "fullDesc": "Designed carefully to impart you the best honeymoon experience, this Bali 5 days itinerary takes you to the best destinations that Bali is blessed with. Also known as the Land of the Gods, Bali appeals through its sheer natural beauty of looming volcanoes and lush terraced rice fields that exude peace and serenity.",
-        "price": 1400,
-        "img": "https://i.ibb.co/n7Cm84b/package5.jpg"
+        "name": "HONDA",
+        "description": "Honda sold what was left of the company to Toyota",
+        "fullDesc": "Honda was named after its founder, Soichiro Honda. Honda originally founded the manufacturer Tōkai Seiki in 1937, which produced piston rings for Toyota.",
+        "price": 8,
+        "img": "https://i.ibb.co/3pRMRNp/car-img8.png"
     },
     {
         "id": 106,
-        "name": "Andaman Honeymoon",
-        "description": "Enjoy An Island Getaway With Our Andaman Honeymoon Package",
-        "fullDesc": "Honeymoon Package. It guarantees a blissful and memorable honeymoon with lots of activities and super romantic moments. If you are looking for a 5n/6d Andaman package, look no further. Starting from Port Blair, this Andaman honeymoon package proceeds to Havelock and Neil.",
-        "price": 1600,
-        "img": "https://i.ibb.co/bK5jX85/package6.jpg"
+        "name": "Mercedes",
+        "description": "The model contained a newly designed engine designated.",
+        "fullDesc": "Mercedes-Benz traces its origins to Karl Benz, who created the first internal combustion engine used in a car.",
+        "price": 11.5,
+        "img": "https://i.ibb.co/wpfSg2P/car-img7.png"
     },
     {
         "id": 107,
-        "name": "Rajasthan Tourism",
-        "description": "Rajasthan Tourism Package For Honeymooners",
-        "fullDesc": "Home to grand palaces, spectacular forts, and enchanting lakes, Rajasthan is an ideal place for honeymooners. Its serenity and beauty make one feel like they are in a fairyland, and booking the romantic Rajasthan tourism tour packages only makes this dream come true.",
-        "price": 900,
-        "img": "https://i.ibb.co/xXYq7Z5/package7.jpg"
+        "name": "Nissan",
+        "description": "The name 'Nissan' was an abbreviation used in the 1930s",
+        "fullDesc": "Aikawa entered the automobile business, and the following year, he incorporated the automobile division as a new subsidiary, which he named Nissan Motor Co., Ltd.",
+        "price": 8,
+        "img": "https://i.ibb.co/RPX1nKy/car-img6.png"
     },
     {
         "id": 108,
-        "name": "Kerala Honeymoon",
-        "description": "Best Selling Kerala Honeymoon Tour Package",
-        "fullDesc": "Celebrate the union of love with TravelTriangle’s perfectly crafted 4 nights & 5 days Kerala honeymoon package from Delhi, Bangalore, Chennai, Hyderabad and other popular Indian cities",
-        "price": 800,
-        "img": "https://i.ibb.co/72ZQVMq/package8.jpg"
+        "name": "Porsche",
+        "description": "Porsche is the majority shareholder in the Volkswagen family.",
+        "fullDesc": "Porsche car is named after its founder, Ferdinand Porsche, who started the company in 1931, in Stuttgart, Germany. Today,",
+        "price": 9,
+        "img": "https://i.ibb.co/wz1zBTc/car-img5.png"
     },
     {
         "id": 109,
-        "name": "Delightful Bhutan",
-        "description": "Delightful Bhutan Honeymoon Package",
-        "fullDesc": "Planning a honeymoon? This fully-customizable 4 nights 5 days Bhutan honeymoon package is all set to gift you the experience to cherish with your partner for lifetime.",
-        "price": 1250,
-        "img": "https://i.ibb.co/DVpzcgc/package9.jpg"
+        "name": "Rolls-Royce",
+        "description": " Royce Limited would manufacture a range of cars to be exclusively",
+        "fullDesc": "Automaker Henry Royce built his first motor car in 1904 and in May of that year met Charles Rolls, whose company sold quality cars in London.",
+        "price": 12,
+        "img": "https://i.ibb.co/740YJKf/car-img4.png"
+    },
+    {
+        "id": 110,
+        "name": "Toyota",
+        "description": "The company name was  to Toyota",
+        "fullDesc": "Toyota Motor Corporation was founded in 1937 by the Toyoda family. In Japanese, the word  takes ten pen strokes to write.",
+        "price": 8.5,
+        "img": "https://i.ibb.co/2Z0sPs1/car-img3.png"
+    },
+    {
+        "id": 111,
+        "name": "Volkswagen",
+        "description": " It was renamed simply Volkswagenwerk, or The People’s Car Company.",
+        "fullDesc": "which was originally called Gesellschaft zur Vorbereitung des Deutschen Volkswagens mbH (Company for the Manufacture of the German Peoples Car).",
+        "price": 8,
+        "img": "https://i.ibb.co/rmxDvYx/car-img2.png"
+    },
+    {
+        "id": 112,
+        "name": "Mitsubishi",
+        "description": "The name Mitsubishi refers to the company's three-diamond emblem.",
+        "fullDesc": "Mitsubishi officially started automobile operations in 1917, with the manufacturing of its Model A passenger car.",
+        "price": 9.4,
+        "img": "https://i.ibb.co/zhkNcKw/car-img1.jpg"
     }
 ]

@@ -1,26 +1,26 @@
+import { useForm } from 'react-hook-form';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 
 const Login = () => {
-    const { handleGoogleLogin, handleUserLogin } = useAuth()
+
+    const { loginUser, signInWithGoogle } = useAuth();
+    const { register, handleSubmit } = useForm();
+
+
     const location = useLocation();
     const history = useHistory();
-    const redirect_uri = location.state?.from || './';
 
-    const handleLogin = (e) => {
-        e.preventDefault()
-        handleUserLogin()
-            .then(result => {
-                history.push(redirect_uri)
-            })
-    }
 
-    const signInUsingGoogle = () => {
-        handleGoogleLogin()
-            .then(result => {
-                history.push(redirect_uri)
-            })
+    const onSubmit = (data) => {
+
+        loginUser(data.email, data.password, location, history);
+        console.log(data);
+    };
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
     }
 
 
@@ -32,22 +32,35 @@ const Login = () => {
                 <div className="container">
                     <h3>Please Login</h3>
 
-                    <form onSubmit={handleLogin} action="">
+                    <form onSubmit={handleSubmit(onSubmit)}>
 
+                        <input
+                            className="input-field"
+                            name="email"
+                            placeholder="Email"
+                            type="email"
+                            {...register("email", { required: true })}
+                        />
                         <br />
-                        <input required type="email" placeholder="email" />
+                        <input
+                            className="input-field"
+                            name="password"
+                            type="password"
+                            placeholder="Password"
+                            {...register("password", { required: true })}
+                        />
                         <br />
-                        <br />
-                        <input required type="password" placeholder="password" />
 
-                        <br />
-                        <input className="submit btn btn-primary" type="submit" value="Login" />
-                        <br />
-                        <p style={{ color: 'green' }}>You are new here please press Register Button</p>
-
-                        <Link to="/register"><input className="submit btn btn-primary" type="submit" value="register" /></Link>
+                        <input
+                            className="submit-btn btn btn-danger mt-3"
+                            type="submit"
+                            value="Login"
+                        />
                     </form>
-                    <button onClick={signInUsingGoogle} className="btn btn-success m-2">google sign in</button>
+                    <p style={{ color: 'green' }}>You are new here please press Register Button</p>
+
+                    <Link to="/register"><input className="submit btn btn-primary" type="submit" value="register" /></Link>
+                    <button onClick={handleGoogleSignIn} className="btn btn-success m-2">google sign in</button>
 
                 </div>
             </div>

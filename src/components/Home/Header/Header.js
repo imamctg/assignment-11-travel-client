@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -6,52 +5,42 @@ import useAuth from '../../../hooks/useAuth';
 import './Header.css'
 
 const Header = () => {
-    const { user, handleLogout } = useAuth();
-    console.log(user)
+    const { user, logout } = useAuth();
 
     return (
 
-        <Navbar className="header" collapseOnSelect expand="lg" variant="light" sticky="top">
+        <Navbar className="header" collapseOnSelect expand="lg" variant="dark" sticky="top">
             <Container>
                 <Navbar.Brand href="#home"> <img
-                    src="https://i.ibb.co/CP9QLG4/logo-1.png"
+                    src="https://i.ibb.co/f28cczx/d43fe514c2404347bcc41b7656268f3d.png"
                     width="100"
                     height="80"
                     className="d-inline-block align-top"
                     alt="React Bootstrap logo"
                 /></Navbar.Brand>
-                <Navbar.Brand className="fw-bolder brand" href="#home"><span style={{ color: 'blue' }}>Adventure</span> Travel</Navbar.Brand>
+                <Navbar.Brand className="fw-bolder brand" href="#home"><span style={{ color: 'blue' }}>Automobile</span> Regency</Navbar.Brand>
                 <Nav className="menu" expand="lg">
                     <Link to="/home">Home</Link>
-
-                    {
-                        user.displayName ?
-                            <div>
-                                <Link to="/manageBooking">My Bookings</Link>
-                                <Link to="/allPackage">Manage All Booking</Link>
-                                <Link to="/addPackage">Add A New Package</Link>
-                            </div> :
-                            <div>
-                                <Link to="/services">Packages</Link>
-                                <Link to="/hotels">Hotels</Link>
-                            </div>
-
-
-                    }
-
-
-
+                    <Link to="/allProducts">More Products</Link>
                     {user.displayName ?
-                        <span className="user-name">{user.displayName}</span> :
-                        <span className="user-name">{user.email}</span>
+                        <div>
+                            <Link to="/dashboard">Dashboard</Link>
+                            <span className="user-name">{user.displayName}</span>
+                            <button className="logout-button" onClick={logout}>Logout</button>
+
+                        </div> :
+                        <div>
+
+                            <Link to="/reviews">Reviews</Link>
+                            <Link to='/login'><button className="btn btn-success ms-1"> Login</button> </Link>
+
+                        </div>
                     }
 
 
-                    {user.email ?
-                        <button className="logout-button" onClick={handleLogout}>Logout</button>
-                        :
-                        <Link to='/login'><button className="btn btn-success ms-1"> Login</button> </Link>
-                    }
+
+
+
                 </Nav>
             </Container>
         </Navbar>

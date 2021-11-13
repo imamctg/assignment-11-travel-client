@@ -2,7 +2,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Home/Header/Header';
-import Services from './components/Home/Services/Services';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AboutUs from './components/AboutUs/AboutUs';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -13,12 +12,16 @@ import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './Context/AuthProvider';
 import Home from './components/Home/Home';
 import Footer from './components/Home/Footer/Footer';
-import ServiceDetail from './components/Home/ServiceDetail/ServiceDetail';
-import Hotels from './components/Home/Hotels/Hotels';
-import Booking from './components/AdminPanel/Booking/Booking';
-import ManagePackage from './components/AdminPanel/ManagePackage/ManagePackage';
-import AddPackage from './components/AdminPanel/AddPackage/AddPackage';
-import AllPackage from './components/AdminPanel/AllPackage/AllPackage';
+import AllProducts from './components/Home/AllProducts/AllProducts';
+import Dashboard from './components/Dashboard/Dashboard';
+import MakeAdmin from './components/Dashboard/MakeAdmin';
+import Payment from './components/Dashboard/Payment/Payment';
+import Reviews from './components/Home/Reviews/Reviews';
+import AddProduct from './components/AdminPanel/AddProduct/AddProduct';
+import AllOrders from './components/AdminPanel/AllOrders/AllOrders';
+import MyOrders from './components/AdminPanel/MyOrders/MyOrders';
+import Purchase from './components/AdminPanel/Purchase/Purchase';
+import Products from './components/Home/Products/Products';
 
 function App() {
   return (
@@ -33,32 +36,45 @@ function App() {
             <Route path='/home'>
               <Home></Home>
             </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+            <Route path='/makeAdmin'>
+              <MakeAdmin></MakeAdmin>
+            </Route>
+            <Route path='/payment'>
+              <Payment></Payment>
+            </Route>
             <Route path='/about'>
               <AboutUs></AboutUs>
             </Route>
-            <PrivateRoute path='/services'>
-              <Services></Services>
+            <PrivateRoute path='/products'>
+              <Products></Products>
             </PrivateRoute>
-            <PrivateRoute path='/servicedetail/:id'>
+            {/* <PrivateRoute path='/servicedetail/:id'>
               <ServiceDetail></ServiceDetail>
-            </PrivateRoute>
-            <PrivateRoute path="/booking/:serviceId">
-              <Booking></Booking>
+            </PrivateRoute> */}
+
+            <PrivateRoute path='/booking/:id'>
+              <Purchase></Purchase>
             </PrivateRoute>
             <Route path='/contact'>
               <ContactUs></ContactUs>
             </Route>
-            <Route path='/manageBooking'>
-              <ManagePackage></ManagePackage>
+            <Route path='/myOrders'>
+              <MyOrders></MyOrders>
             </Route>
-            <Route path='/addPackage'>
-              <AddPackage></AddPackage>
+            <Route path='/addProduct'>
+              <AddProduct></AddProduct>
             </Route>
-            <Route path='/allPackage'>
-              <AllPackage></AllPackage>
+            <Route path='/allOrders'>
+              <AllOrders></AllOrders>
             </Route>
-            <Route path='/hotels'>
-              <Hotels></Hotels>
+            <Route path='/allProducts'>
+              <AllProducts></AllProducts>
+            </Route>
+            <Route path='/reviews'>
+              <Reviews></Reviews>
             </Route>
             <Route path='/login'>
               <Login></Login>
