@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 const ServiceDetail = () => {
     const { id } = useParams();
-    const [packages, setpackages] = useState([]);
-    console.log(packages);
+    const [products, setproducts] = useState([]);
+
     useEffect(() => {
-        fetch('https://frozen-crag-22043.herokuapp.com/services')
+        fetch('https://frozen-crag-22043.herokuapp.com/products/')
             .then(res => res.json())
-            .then(data => setpackages(data))
+            .then(data => setproducts(data))
     }, [])
 
-    const Item = packages.filter(td => td.id == id);
+    const Item = products.filter(td => td.id == id);
 
     console.log(Item)
 

@@ -1,13 +1,13 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import './AddPackage.css';
+import './AddProduct.css';
 
-const AddPackage = () => {
+const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        axios.post('https://frozen-crag-22043.herokuapp.com/services', data)
+        axios.post('https://frozen-crag-22043.herokuapp.com/products/', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully')
@@ -18,7 +18,7 @@ const AddPackage = () => {
     }
     return (
         <div className="add-service">
-            <h2>Please Add a Package</h2>
+            <h2>Please Add a Product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <input {...register("name", { required: true, maxLength: 20 })} placeholder="Name" />
@@ -34,4 +34,4 @@ const AddPackage = () => {
     );
 };
 
-export default AddPackage;
+export default AddProduct;

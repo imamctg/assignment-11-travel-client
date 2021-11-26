@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Product.css';
 
-const Hotel = (props) => {
-    const { name, img, address, price, id } = props.hotel;
+const Product = (props) => {
+
+    const { name, description, price, img, id } = props.product;
     return (
         <div className="col-md-4">
             <div className="container service">
@@ -11,11 +13,13 @@ const Hotel = (props) => {
                     <Card.Img style={{ height: '180px' }} variant="top" src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Card.Text>Add: {address}</Card.Text>
-                        <Card.Title className="text-danger">Price : $ {price}</Card.Title>
-                        <Link to={`/servicedetail/${id}`}>
-                            <Button variant="info">Book Hotel</Button>
+                        <Card.Title>Price :  {price} Million</Card.Title>
+                        <Card.Text>Description: {description}</Card.Text>
+                        <Link to={`/booking/${id}`}>
+                            <Button variant="info">BUY NOW</Button>
                         </Link>
+
+
                     </Card.Body>
                 </Card>
 
@@ -25,4 +29,4 @@ const Hotel = (props) => {
     );
 };
 
-export default Hotel;
+export default Product;

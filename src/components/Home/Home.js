@@ -1,8 +1,9 @@
 
 import Banner from './Banner/Banner';
-import Hotels from './Hotels/Hotels';
-import Services from './Services/Services';
-import Vacation from './Vacation/Vacation';
+import BestSellerCar from './BestSellerCar/BestSellerCar';
+import Reviews from './Reviews/Reviews';
+import ProductSlider from './ProductSlider/ProductSlider';
+import Products from './Products/Products';
 
 
 
@@ -13,9 +14,10 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Services></Services>
-            <Vacation></Vacation>
-            <Hotels></Hotels>
+            <Products></Products>
+            <ProductSlider></ProductSlider>
+            <Reviews></Reviews>
+            <BestSellerCar></BestSellerCar>
         </div>
 
 
